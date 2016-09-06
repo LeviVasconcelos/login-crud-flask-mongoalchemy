@@ -1,1 +1,1 @@
-web: gunicorn run:MoviesLib --log-file -
+web: python run.py
