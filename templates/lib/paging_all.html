@@ -1,0 +1,15 @@
+{% extends "lib/list_all.html" %}
+
+{%block body_ext%}
+	{{ super() }}
+
+	<p class=page_menu>
+		{% if movies_page.has_prev() %}
+			<a href="{{ url_for('list_movies', page=movies_page.prev_num) }}"> &lt;&lt; </a>
+		{% endif %}
+		&nbsp;
+		{% if movies_page.has_next() %}
+			<a href="{{ url_for('list_movies', page=movies_page.next_num) }}"> &gt;&gt; </a>
+		{% endif %}
+	</p>
+{% endblock %}

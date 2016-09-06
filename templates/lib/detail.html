@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+
+{% block body_ext %}
+<h1> {{ movie.title }} </h1>
+<h4> {{ movie.year }} </h4>
+</br>
+</br>
+Synopse:
+</br>
+<p> {{ movie.synopse }} </p>
+</br>
+<a href="{{ url_for('list_movies',page=page) }}">back</a>
+{% endblock %}

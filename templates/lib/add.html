@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+
+{%block title%}Add Movie{%endblock%}
+
+{%block body_ext%}
+<h2>New Movie</h2>
+<form method="post" action="" accept-charset="utf-8">
+	{{ form.csrf_token }}
+	<p>{{ form.title.label }}: {{ form.title }}</p>
+	<p>{{ form.year.label }}: {{ form.year }}</p>
+	<p>{{ form.synopse.label }}:</p>
+	<p>{{ form.synopse(rows = 10, cols=50) }}</p>
+	<input type="submit" value="save">
+</form>
+
+{% for msg in form.title.errors %}
+<div class=error> {{ msg }} </div>
+{% endfor %}
+{% for msg in form.year.errors %}
+<div class=error> {{ msg }} </div>
+{% endfor %}
+{% for msg in form.synopse.errors %}
+<div class=error> {{ msg }} </div>
+{% endfor %}
+{%endblock%}

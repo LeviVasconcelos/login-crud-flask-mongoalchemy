@@ -1,0 +1,35 @@
+{% extends "login/base.html" %}
+{%block title%} Sign Up {% endblock %}
+{%block body_ext%}
+	<form action="" method="post" accept-charset="utf-8">
+		{{form.csrf_token}}
+		<p> {{ form.username.label }}: </p>
+		<p> {{ form.username }} </p>
+
+		<p> {{ form.passwd.label }}: </p>
+		<p> {{ form.passwd }} </p>
+
+		<p> {{ form.passwd_check.label }}</p>
+		<p> {{ form.passwd_check }} </p>
+
+		<p> {{ form.email.label }} </p>	
+		<p> {{ form.email }} </p>
+		<select id="perm" name="perm">
+			<option id="perm" value="admin">Admin</option>
+			<option id="perm" value="common">Common</option>
+		</select>
+		<button type="submit"> Register </button>
+	</form>
+	{% for e in form.username.errors %}
+		<div class='error' color='#ff0000'> {{e}} </div>
+	{% endfor %}
+	{% for e in form.passwd.errors %}
+		<div class='error'> {{e}} </div>
+	{% endfor %}
+	{% for e in form.passwd_check.errors %}
+		<div class='error'> {{e}} </div>
+	{% endfor %}
+	{% for e in form.email.errors %}
+		<div class='error'> {{e}} </div>
+	{% endfor %}
+{%endblock%}
