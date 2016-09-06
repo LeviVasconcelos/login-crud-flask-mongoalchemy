@@ -8,6 +8,7 @@ from flask.ext.login import LoginManager
 
 MoviesLib_app = flask.Flask(__name__)
 MoviesLib_app.config['MONGOALCHEMY_DATABASE'] = 'levimovies'
+MoviesLib_app.config['MONGOALCHEMY_DATABASE_URI'] = 'mongodb://movieslibapp:movieslibapp_passwd@ds01316.mlab.com:1316/levimovies'
 #MoviesLib_app.config['SECRET_KEY'] = 'try out'
 MoviesLib_app.config['MONGOALCHEMY_SERVER_AUTH'] = True
 #MoviesLib_app.config['DEBUG'] = True
