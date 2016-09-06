@@ -51,8 +51,8 @@ def Exists(collection, collection_field, message='This entry does not exists on 
 
 
 class LoginForm(wtf.Form):
-	username = wtforms.TextField(validators=[validators.Required(), Exists(User, 'username', message='Invalid username.')])
-	passwd = wtforms.PasswordField(validators=[validators.Required(), validators.Length(min=8, message='Password most be more than 8 characters long.')])
+	username = wtforms.TextField(validators=[validators.Required(message='Login field required.'), Exists(User, 'username', message='Invalid username.')])
+	passwd = wtforms.PasswordField(validators=[validators.Required(message='Password field required.'), validators.Length(min=8, message='Password most be more than 8 characters long.')])
 
 	related_usr = None
 
