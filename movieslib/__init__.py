@@ -2,11 +2,15 @@ import flask
 from flask.ext.mongoalchemy import MongoAlchemy
 from flask.ext.login import LoginManager
 
+#dbuser = movieslibapp
+#db passwd movieslibapp_passwd
+#url =   mongodb://<dbuser>:<dbpassword>@ds019976.mlab.com:19976/levimovies
 
 MoviesLib_app = flask.Flask(__name__)
-MoviesLib_app.config['MONGOALCHEMY_DATABASE'] = 'movies'
+MoviesLib_app.config['MONGOALCHEMY_DATABASE'] = 'levimovies'
 MoviesLib_app.config['SECRET_KEY'] = 'try out'
-#MoviesLib_app.config['DEBUG'] = True
+MoviesLib_app.config['MONGOALCHEMY_SERVER_AUTH'] = False
+MoviesLib_app.config['DEBUG'] = True
 
 db = MongoAlchemy(MoviesLib_app)
 login_manager = LoginManager()
