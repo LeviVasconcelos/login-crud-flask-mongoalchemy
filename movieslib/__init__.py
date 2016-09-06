@@ -14,6 +14,7 @@ MoviesLib_app.config['MONGOALCHEMY_PORT'] = '19976'
 MoviesLib_app.config['MONGOALCHEMY_USER'] = 'movieslibapp'
 MoviesLib_app.config['MONGOALCHEMY_PASSWORD'] = 'movieslibapp_passwd'
 MoviesLib_app.config['MONGOALCHEMY_SERVER_AUTH'] = False
+MoviesLib_app.config['SECRET_KEY']= 'asdaqwevvxvxvxv'
 #MoviesLib_app.config['MONGOALCHEMY_CONNECTION_STRING'] = 'mongodb://movieslibapp:movieslibapp_passwd@ds01316.mlab.com:1316/levimovies'
 #MoviesLib_app.config['DEBUG'] = True
 
