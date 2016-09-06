@@ -8,7 +8,7 @@ from flask.ext.login import LoginManager
 
 MoviesLib_app = flask.Flask(__name__)
 MoviesLib_app.config['MONGOALCHEMY_DATABASE'] = 'levimovies'
-MoviesLib_app.config['SECRET_KEY'] = 'try out'
+#MoviesLib_app.config['SECRET_KEY'] = 'try out'
 MoviesLib_app.config['MONGOALCHEMY_SERVER_AUTH'] = False
 #MoviesLib_app.config['DEBUG'] = True
 
