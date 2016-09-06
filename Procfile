@@ -1,1 +1,1 @@
-web: gunicorn run:MoviesLib_app --log-file -
+web: gunicorn run:MoviesLib --log-file -
