@@ -6,7 +6,7 @@ from flask.ext.login import LoginManager
 MoviesLib_app = flask.Flask(__name__)
 MoviesLib_app.config['MONGOALCHEMY_DATABASE'] = 'movies'
 MoviesLib_app.config['SECRET_KEY'] = 'try out'
-MoviesLib_app.config['DEBUG'] = True
+#MoviesLib_app.config['DEBUG'] = True
 
 db = MongoAlchemy(MoviesLib_app)
 login_manager = LoginManager()
