@@ -1,6 +1,9 @@
 import flask
-from flask.ext.mongoalchemy import MongoAlchemy
-from flask.ext.login import LoginManager
+from flask_mongoalchemy import MongoAlchemy
+from flask_login import LoginManager
+from movieslib.likeapi import LikeAPI
+
+
 import os
 
 #dbuser = movieslibapp
@@ -18,9 +21,17 @@ MoviesLib_app.config['SECRET_KEY']= os.environ['FORM_SKEY']
 #MoviesLib_app.config['DEBUG'] = True
 
 db = MongoAlchemy(MoviesLib_app)
+
+
 login_manager = LoginManager()
 login_manager.init_app(MoviesLib_app)
 
 import views
+from movieslib.documents import Movie, User
+
 login_manager.login_view = views.login
+
+like_api_view = LikeAPI.as_view('like_movie', collection=Movie, user_col=User)
+MoviesLib_app.add_url_rule('/movies/like/<id>', view_func=like_api_view, methods=['GET'])
+
 _ = views

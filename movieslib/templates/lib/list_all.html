@@ -12,7 +12,7 @@
 
 	<ul>
 	{%for movie in movies_page.items%}
-		<li> <a href="{{ url_for('movie_detail',id=movie.mongo_id, page=page) }}">{{movie.title}} [{{movie.year}}]</a> &nbsp; {%if "admin" in current_user.perms %}(<a href="{{ url_for('movie_edit', id = movie.mongo_id, page=page) }}">Edit</a> | <a href="{{ url_for('movie_delete', id = movie.mongo_id, page=page) }}">Delete</a>)</li> {%endif%}
+		<li> <a href="{{ url_for('movie_detail',id=movie.mongo_id, page=page) }}">{{movie.title}} [{{movie.year}}]</a> &nbsp; ( {{ movie.likes_count }} ) &nbsp; (<a href="{{ url_for('like_movie',id=movie.mongo_id) }}">Like</a> {%if "admin" in current_user.perms %} | <a href="{{ url_for('movie_edit', id = movie.mongo_id, page=page) }}">Edit</a> | <a href="{{ url_for('movie_delete', id = movie.mongo_id, page=page) }}">Delete</a> {%-endif-%} ) </li>
 	{%endfor%}
 	</ul>
 {%endblock%}

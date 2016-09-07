@@ -29,6 +29,7 @@ class MovieAddForm(wtf.Form):
 		self.related_doc.title = self.title.data
 		self.related_doc.year = self.year.data
 		self.related_doc.synopse = self.synopse.data
+		self.related_doc.likes_users = []
 		self.related_doc.save()
 		return self.related_doc
 
