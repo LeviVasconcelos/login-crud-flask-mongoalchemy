@@ -6,8 +6,6 @@ from movieslib.likeapi import LikeAPI
 
 import os
 
-#dbuser = movieslibapp
-#db passwd movieslibapp_passwd
 #url =   mongodb://<dbuser>:<dbpassword>@ds019976.mlab.com:19976/levimovies
 
 MoviesLib_app = flask.Flask(__name__)
